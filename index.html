@@ -19,8 +19,17 @@
 
     <div id="gifs">
     </div>
+    <br>
+    <form class="search">
+        <label for="search-gifs">Add a sport</label>
+        <input type="text" id="search-gifs">
+        <br>
+        <input type="Submit" id="Submit" value="Submit">
+    </form>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
     <script type="text/javascript">
+
+
 
         $("button").on("click", function () {
 
@@ -58,6 +67,7 @@
 
                 })
 
+
         });
         $(document).on("click", "#gif-img", function () {
             console.log("you got clicked", $(this).attr("moving"))
@@ -69,6 +79,18 @@
             } else if ($(this).attr("src") === $(this).attr("moving")) {
                 $(this).attr("src", $(this).attr("still"))
             }
+
+        
+
+            $("#Submit").on("click", function (event) {
+                event.preventDefault();
+                var newSport = $("#search-gifs").val().trim();
+                SportsDiv.push(newSport);
+                createButton();
+                $("#search-gifs").val("");
+
+            });
+
 
 
         });
