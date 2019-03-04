@@ -9,6 +9,13 @@
 </head>
 
 <body>
+    <form class="search">
+        <label for="search-gifs">Add a sport</label>
+        <input type="text" id="search-gifs">
+        <br>
+        <input type="Submit" id="Submit" value="Submit">
+    </form>
+    <br>
 
     <button data-sports="hockey">hockey</button>
     <button data-sports="football">football</button>
@@ -20,12 +27,7 @@
     <div id="gifs">
     </div>
     <br>
-    <form class="search">
-        <label for="search-gifs">Add a sport</label>
-        <input type="text" id="search-gifs">
-        <br>
-        <input type="Submit" id="Submit" value="Submit">
-    </form>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
     <script type="text/javascript">
 
@@ -80,7 +82,7 @@
                 $(this).attr("src", $(this).attr("still"))
             }
 
-        
+
 
             $("#Submit").on("click", function (event) {
                 event.preventDefault();
